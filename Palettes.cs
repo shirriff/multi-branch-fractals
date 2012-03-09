@@ -61,6 +61,7 @@ namespace Microsoft
             }
             else if ("Random".Equals(name))
             {
+                paletteColors[0] = Color.Black;
                 Random r = new Random(0);
                 for (int i = 1; i < 256; i++) paletteColors[i] = Color.FromArgb(255, r.Next(256), r.Next(256), r.Next(256));
             }

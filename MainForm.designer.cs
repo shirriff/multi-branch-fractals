@@ -23,7 +23,6 @@
         public static int WIDTH = 512;
         public static int HEIGHT = 512;
 
-
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -42,7 +41,7 @@
             this.mandelbrotPb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mandelbrotPb.Location = new System.Drawing.Point(0, 0);
             this.mandelbrotPb.Name = "mandelbrotPb";
-            this.mandelbrotPb.Size = new System.Drawing.Size(WIDTH, HEIGHT);
+            this.mandelbrotPb.Size = new System.Drawing.Size(512, 512);
             this.mandelbrotPb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mandelbrotPb.TabIndex = 0;
             this.mandelbrotPb.TabStop = false;
@@ -58,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(WIDTH, HEIGHT);
+            this.ClientSize = new System.Drawing.Size(512, 512);
             this.Controls.Add(this.mandelbrotPb);
             this.Name = "MainForm";
             this.Text = "Mandelbrot Fractals";

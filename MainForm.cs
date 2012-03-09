@@ -22,6 +22,10 @@ namespace Microsoft
             props = new PropsDialog(this);
             props.loadFields(mandelProps);
             props.Show();
+            juliaForm = new JuliaForm();
+            //juliaForm.Size = new System.Drawing.Size(512, 512);
+            juliaForm.pictureBox1.Size = new System.Drawing.Size(512, 512);
+            juliaForm.Show();
         }
 
         PropsDialog props;
@@ -50,6 +54,8 @@ namespace Microsoft
         private Dials dials;
         private Bitmap bmp;
         private Task currentTask;
+        private PictureBox juliaPb;
+        private JuliaForm juliaForm;
 
         void mandelbrotPb_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -258,7 +264,7 @@ namespace Microsoft
 
                 // Render the fractal
                 bmp = MandelbrotGenerator.Create(mandelProps, _mandelbrotWindow, renderSize.Width, renderSize.Height, token, _parallelRendering);
-                mandelProps.julia = false;
+
                 if (bmp != null)
                 {
                     sw.Stop();
@@ -273,13 +279,23 @@ namespace Microsoft
                         // And update the form's title to reflect the rendering time.
                         if (timeOfRequest > _lastUpdateTime)
                         {
-                            old = mandelbrotPb.Image;
-                            mandelbrotPb.Image = bmp;
+                            if (mandelProps.julia)
+                            {
+                                old = juliaForm.pictureBox1.Image;
+                                juliaForm.pictureBox1.Image = bmp;
+                            }
+                            else
+                            {
+                                old = mandelbrotPb.Image;
+                                mandelbrotPb.Image = bmp;
+                            }
+                           
                             _lastUpdateTime = timeOfRequest;
                             this.Text = string.Format(_formTitle, _parallelRendering ? Environment.ProcessorCount : 1, ppms.ToString("F2"), sw.ElapsedMilliseconds.ToString());
                         }
                         // If the image isn't the most recent, just get rid of it
                         else bmp.Dispose();
+                        mandelProps.julia = false;
                     });
                     if (old != null) old.Dispose();
                 }
