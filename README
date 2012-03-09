@@ -1,0 +1,7 @@
+This code uses my new multi-branch fractal algorithm to generate Mandelbrot-like fractals for z^2.5+C.
+
+This code is a big mess of random stuff, but it's here in case anyone finds it useful. You're probably better off implementing the algorithm yourself.
+
+For details on multi-branch fractals, see http://www.arcfn.com/2011/12/new-multi-branch-algorithm-to-render.html
+
+Ken Shirriff
