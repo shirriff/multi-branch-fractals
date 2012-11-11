@@ -4,4 +4,9 @@ This code is a big mess of random stuff, but it's here in case anyone finds it u
 
 For details on multi-branch fractals, see http://www.arcfn.com/2011/12/new-multi-branch-algorithm-to-render.html
 
+The parallel rendering framework is from
+"Samples for Parallel Programming with the .NET Framework" by Stephen Toub:
+http://code.msdn.microsoft.com/windowsdesktop/Samples-for-Parallel-b4b76364/sourcecode?fileId=44488&pathId=1262092092
+and used under MS-LPL 1.1 license: http://msdn.microsoft.com/en-us/cc300389.aspx#P
+
 Ken Shirriff
